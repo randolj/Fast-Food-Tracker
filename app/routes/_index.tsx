@@ -99,6 +99,8 @@ export default function Index() {
       { method: "post" }
     );
     handleCloseModal();
+    setInputDate('');
+    setInputValue('');
   }
 
   const lastEatenDate = lastEntry?.dateEaten ? new Date(lastEntry.dateEaten) : null;

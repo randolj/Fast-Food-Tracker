@@ -15,6 +15,8 @@ import { sql } from "drizzle-orm";
 export let loader: LoaderFunction = async ({ context }) => {
   const db = drizzle(context.cloudflare.env.DB);
 
+  // await db.run(sql`DROP TABLE IF EXISTS fastFoodLog`);
+
   // Initialize the database schema
   await db.run(
     sql`CREATE TABLE IF NOT EXISTS fastFoodLog (
