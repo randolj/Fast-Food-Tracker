@@ -1,0 +1,6 @@
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "db"
+database_id = "fa699b83-6ced-44a0-9775-94aa6987b8ee"
+
+migrations_dir="./app/drizzle/migrations"
