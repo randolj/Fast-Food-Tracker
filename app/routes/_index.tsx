@@ -55,7 +55,6 @@ export async function loader({
 }: LoaderFunctionArgs) {
   const db = drizzle(context.cloudflare.env.DB);
 
-  // Fetch the most recent entry from the "fastFoodLog" table
   const lastEntry = await db
     .select({
       id: fastFoodLog.id,
