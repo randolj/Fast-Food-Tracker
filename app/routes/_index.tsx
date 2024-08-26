@@ -48,7 +48,7 @@ export async function action({
   );
 }
 
-import { asc, desc } from "drizzle-orm"; // Ensure you import the 'desc' function if available
+import { asc, desc } from "drizzle-orm";
 
 export async function loader({
   context,
@@ -63,9 +63,10 @@ export async function loader({
       dateEaten: fastFoodLog.dateEaten,
     })
     .from(fastFoodLog)
-    .orderBy(asc(fastFoodLog.dateEaten)) // Use 'desc' to specify descending order
-    .limit(1)
+    .orderBy(desc(fastFoodLog.id)) // Use 'desc' to specify descending order
     .execute();
+
+    console.log(lastEntry);
 
     return json<LoaderData>({
       lastEntry: lastEntry[0] || null,
